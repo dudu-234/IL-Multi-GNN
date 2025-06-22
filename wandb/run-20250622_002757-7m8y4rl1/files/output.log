@@ -1,0 +1,10 @@
+[38;5;247mic[39m[38;5;245m|[39m[38;5;245m [39m[38;5;32mtype[39m[38;5;245m([39m[38;5;247mtr_loader[39m[38;5;245m)[39m[38;5;245m:[39m[38;5;245m [39m[38;5;245m<[39m[38;5;100mclass[39m[38;5;234m [39m[38;5;166m'[39m[38;5;32mtorch_geometric[39m[38;5;245m.[39m[38;5;247mloader[39m[38;5;245m.[39m[38;5;247mlink_neighbor_loader[39m[38;5;245m.[39m[38;5;247mLinkNeighborLoader[39m[38;5;36m'[39m[38;5;36m>[39m
+Traceback (most recent call last):
+  File "F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\main.py", line 41, in <module>
+    main()
+  File "F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\main.py", line 34, in main
+    train_gnn(tr_data, val_data, te_data, tr_inds, val_inds, te_inds, args, data_config)
+  File "F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\training.py", line 209, in train_gnn
+    sample_batch = next(iter(tr_loader))
+                             ^^^^^^
+NameError: name 'loader' is not defined

@@ -1,0 +1,22 @@
+2025-06-22 01:43:53,376 INFO    MainThread:10188 [wandb_setup.py:_flush():81] Current SDK version is 0.20.1
+2025-06-22 01:43:53,376 INFO    MainThread:10188 [wandb_setup.py:_flush():81] Configure stats pid to 10188
+2025-06-22 01:43:53,376 INFO    MainThread:10188 [wandb_setup.py:_flush():81] Loading settings from C:\Users\ASUS\.config\wandb\settings
+2025-06-22 01:43:53,376 INFO    MainThread:10188 [wandb_setup.py:_flush():81] Loading settings from F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\wandb\settings
+2025-06-22 01:43:53,376 INFO    MainThread:10188 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-06-22 01:43:53,376 INFO    MainThread:10188 [wandb_init.py:setup_run_log_directory():703] Logging user logs to F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\wandb\run-20250622_014353-cosrb4ao\logs\debug.log
+2025-06-22 01:43:53,382 INFO    MainThread:10188 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\wandb\run-20250622_014353-cosrb4ao\logs\debug-internal.log
+2025-06-22 01:43:53,382 INFO    MainThread:10188 [wandb_init.py:init():831] calling init triggers
+2025-06-22 01:43:53,382 INFO    MainThread:10188 [wandb_init.py:init():836] wandb.init called with sweep_config: {}
+config: {'epochs': 100, 'batch_size': 8192, 'model': 'gin', 'data': 'Small_HI', 'num_neighbors': [100, 100], 'lr': 0.006213266113989207, 'n_hidden': 66.00315515631006, 'n_gnn_layers': 2, 'loss': 'ce', 'w_ce1': 1.0000182882773443, 'w_ce2': 6.275014431494497, 'dropout': 0.00983468338330501, 'final_dropout': 0.10527690625126304, 'n_heads': None, '_wandb': {}}
+2025-06-22 01:43:53,382 INFO    MainThread:10188 [wandb_init.py:init():872] starting backend
+2025-06-22 01:43:54,540 INFO    MainThread:10188 [wandb_init.py:init():875] sending inform_init request
+2025-06-22 01:43:54,685 INFO    MainThread:10188 [wandb_init.py:init():883] backend started and connected
+2025-06-22 01:43:54,692 INFO    MainThread:10188 [wandb_init.py:init():956] updated telemetry
+2025-06-22 01:43:55,438 INFO    MainThread:10188 [wandb_init.py:init():980] communicating run to backend with 90.0 second timeout
+2025-06-22 01:43:55,879 INFO    MainThread:10188 [wandb_init.py:init():1032] starting run threads in backend
+2025-06-22 01:43:58,179 INFO    MainThread:10188 [wandb_run.py:_console_start():2453] atexit reg
+2025-06-22 01:43:58,179 INFO    MainThread:10188 [wandb_run.py:_redirect():2301] redirect: wrap_raw
+2025-06-22 01:43:58,180 INFO    MainThread:10188 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2025-06-22 01:43:58,180 INFO    MainThread:10188 [wandb_run.py:_redirect():2393] Redirects installed.
+2025-06-22 01:43:58,261 INFO    MainThread:10188 [wandb_init.py:init():1078] run started, returning control to user process
+2025-06-22 01:44:01,712 INFO    MsgRouterThr:10188 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

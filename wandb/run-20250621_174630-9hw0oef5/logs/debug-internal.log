@@ -1,0 +1,2 @@
+{"time":"2025-06-21T17:46:35.8875801+07:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"F:\\UNIVERSITY\\UNIVERSITY_DOCUMENTS\\BIG_DATA\\Doan\\baseline\\multi_gnn\\Multi-GNN\\wandb\\run-20250621_174630-9hw0oef5\\logs\\debug-core.log"}
+{"time":"2025-06-21T17:46:35.8900775+07:00","level":"ERROR+4","msg":"stream_init: failed to fetch credentials: api: couldn't get API key: settings: failed to get API key from netrc: open C:\\Users\\ASUS\\_netrc: The system cannot find the file specified."}

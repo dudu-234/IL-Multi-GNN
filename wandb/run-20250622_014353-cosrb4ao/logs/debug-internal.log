@@ -1,0 +1,15 @@
+{"time":"2025-06-22T01:43:54.6928208+07:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"F:\\UNIVERSITY\\UNIVERSITY_DOCUMENTS\\BIG_DATA\\Doan\\baseline\\multi_gnn\\Multi-GNN\\wandb\\run-20250622_014353-cosrb4ao\\logs\\debug-core.log"}
+{"time":"2025-06-22T01:43:55.5060666+07:00","level":"INFO","msg":"stream: created new stream","id":"cosrb4ao"}
+{"time":"2025-06-22T01:43:55.5060666+07:00","level":"INFO","msg":"stream: started","id":"cosrb4ao"}
+{"time":"2025-06-22T01:43:55.5060666+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"cosrb4ao"}
+{"time":"2025-06-22T01:43:55.5060666+07:00","level":"INFO","msg":"handler: started","stream_id":"cosrb4ao"}
+{"time":"2025-06-22T01:43:55.5060666+07:00","level":"INFO","msg":"sender: started","stream_id":"cosrb4ao"}
+{"time":"2025-06-22T01:43:55.885521+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-22T01:44:01.7684453+07:00","level":"INFO","msg":"stream: closing","id":"cosrb4ao"}
+{"time":"2025-06-22T01:44:01.7891245+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-22T01:44:01.7891245+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-22T01:44:03.4721503+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-22T01:44:03.9423739+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"cosrb4ao"}
+{"time":"2025-06-22T01:44:03.9423739+07:00","level":"INFO","msg":"sender: closed","stream_id":"cosrb4ao"}
+{"time":"2025-06-22T01:44:03.9429148+07:00","level":"INFO","msg":"handler: closed","stream_id":"cosrb4ao"}
+{"time":"2025-06-22T01:44:03.9429148+07:00","level":"INFO","msg":"stream: closed","id":"cosrb4ao"}

@@ -1,0 +1,45 @@
+2025-06-21 17:46:30,880 INFO    MainThread:368 [wandb_setup.py:_flush():81] Current SDK version is 0.20.1
+2025-06-21 17:46:30,880 INFO    MainThread:368 [wandb_setup.py:_flush():81] Configure stats pid to 368
+2025-06-21 17:46:30,881 INFO    MainThread:368 [wandb_setup.py:_flush():81] Loading settings from C:\Users\ASUS\.config\wandb\settings
+2025-06-21 17:46:30,881 INFO    MainThread:368 [wandb_setup.py:_flush():81] Loading settings from F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\wandb\settings
+2025-06-21 17:46:30,881 INFO    MainThread:368 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-06-21 17:46:30,881 INFO    MainThread:368 [wandb_init.py:setup_run_log_directory():703] Logging user logs to F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\wandb\run-20250621_174630-9hw0oef5\logs\debug.log
+2025-06-21 17:46:30,881 INFO    MainThread:368 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\wandb\run-20250621_174630-9hw0oef5\logs\debug-internal.log
+2025-06-21 17:46:30,881 INFO    MainThread:368 [wandb_init.py:init():831] calling init triggers
+2025-06-21 17:46:30,881 INFO    MainThread:368 [wandb_init.py:init():836] wandb.init called with sweep_config: {}
+config: {'epochs': 100, 'batch_size': 8192, 'model': 'gin', 'data': 'Small_HI', 'num_neighbors': [100, 100], 'lr': 0.006213266113989207, 'n_hidden': 66.00315515631006, 'n_gnn_layers': 2, 'loss': 'ce', 'w_ce1': 1.0000182882773443, 'w_ce2': 6.275014431494497, 'dropout': 0.00983468338330501, 'final_dropout': 0.10527690625126304, 'n_heads': None, '_wandb': {}}
+2025-06-21 17:46:30,881 INFO    MainThread:368 [wandb_init.py:init():872] starting backend
+2025-06-21 17:46:35,618 INFO    MainThread:368 [wandb_init.py:init():875] sending inform_init request
+2025-06-21 17:46:35,820 INFO    MainThread:368 [wandb_init.py:init():883] backend started and connected
+2025-06-21 17:46:35,827 INFO    MainThread:368 [wandb_init.py:init():956] updated telemetry
+2025-06-21 17:46:35,946 INFO    MainThread:368 [wandb_init.py:init():980] communicating run to backend with 90.0 second timeout
+2025-06-21 17:46:35,951 WARNING MsgRouterThr:368 [router.py:message_loop():63] [no run ID] message_loop has been closed
+Traceback (most recent call last):
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\wandb\sdk\lib\sock_client.py", line 208, in _read_packet_bytes
+    data = self._sock.recv(self._bufsize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\wandb\sdk\interface\router_sock.py", line 27, in _read_message
+    return self._sock_client.read_server_response(timeout=1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\wandb\sdk\lib\sock_client.py", line 235, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\wandb\sdk\lib\sock_client.py", line 212, in _read_packet_bytes
+    raise SockClientClosedError from e
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\wandb\sdk\interface\router.py", line 56, in message_loop
+    msg = self._read_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\wandb\sdk\interface\router_sock.py", line 29, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-06-21 17:46:36,216 INFO    MsgRouterThr:368 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

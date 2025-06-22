@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\main.py", line 41, in <module>
+    main()
+  File "F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\main.py", line 34, in main
+    train_gnn(tr_data, val_data, te_data, tr_inds, val_inds, te_inds, args, data_config)
+  File "F:\UNIVERSITY\UNIVERSITY_DOCUMENTS\BIG_DATA\Doan\baseline\multi_gnn\Multi-GNN\training.py", line 207, in train_gnn
+    sample_batch = list(tr_loader)[0]
+                   ^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\torch\utils\data\dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\torch\utils\data\dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\torch_geometric\loader\link_loader.py", line 211, in collate_fn
+    out = self.link_sampler.sample_from_edges(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\torch_geometric\sampler\neighbor_sampler.py", line 334, in sample_from_edges
+    out = edge_sample(inputs, self._sample, self.num_nodes, self.disjoint,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\torch_geometric\sampler\neighbor_sampler.py", line 740, in edge_sample
+    out = sample_fn(seed, seed_time)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\UNIVERSITY\python_venv\antifraud_venv\Lib\site-packages\torch_geometric\sampler\neighbor_sampler.py", line 508, in _sample
+    raise ImportError(f"'{self.__class__.__name__}' requires "
+ImportError: 'NeighborSampler' requires either 'pyg-lib' or 'torch-sparse'

@@ -1,0 +1,15 @@
+{"time":"2025-06-22T23:38:40.5717295+07:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"F:\\UNIVERSITY\\UNIVERSITY_DOCUMENTS\\BIG_DATA\\Doan\\baseline\\multi_gnn\\Multi-GNN\\wandb\\run-20250622_233839-3pm8stuu\\logs\\debug-core.log"}
+{"time":"2025-06-22T23:38:41.974858+07:00","level":"INFO","msg":"stream: created new stream","id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:41.974858+07:00","level":"INFO","msg":"stream: started","id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:41.9757727+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:41.9764717+07:00","level":"INFO","msg":"sender: started","stream_id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:41.9764717+07:00","level":"INFO","msg":"handler: started","stream_id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:42.3678084+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-22T23:38:44.4830551+07:00","level":"INFO","msg":"stream: closing","id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:44.4838545+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-22T23:38:44.4838545+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-22T23:38:46.1041772+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-22T23:38:46.5521213+07:00","level":"INFO","msg":"sender: closed","stream_id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:46.5521213+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:46.5521213+07:00","level":"INFO","msg":"handler: closed","stream_id":"3pm8stuu"}
+{"time":"2025-06-22T23:38:46.5523757+07:00","level":"INFO","msg":"stream: closed","id":"3pm8stuu"}
