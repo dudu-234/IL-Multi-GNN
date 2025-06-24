@@ -1,0 +1,1 @@
+python main.py --data sample --model gin --save_model --unique_name GIN --tqdm --inference

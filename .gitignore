@@ -5,3 +5,6 @@ data/HI-Small_Trans.csv
 data/Small_HI/HI-Small_Trans.csv
 data/Small_HI/formatted_transactions copy.csv
 data/Small_HI/formatted_transactions.csv
+save
+test.ipynb
+wandb

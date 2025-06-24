@@ -1,7 +1,8 @@
 {
   "paths": {
     "aml_data": "./data",
-    "model_to_load": "/path/to/model_you_want_to_load (e.g for inference or fine-tuning)",
-    "model_to_save": "./save"
+    "model_to_load": "./save",
+    "model_to_save": "./save",
+    "prediction_to_save": "./save/predictions"
   }
 }

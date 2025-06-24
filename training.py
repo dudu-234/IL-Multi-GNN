@@ -13,6 +13,8 @@ import logging
 def train_homo(tr_loader, val_loader, te_loader, tr_inds, val_inds, te_inds, model, optimizer, loss_fn, args, config, device, val_data, te_data, data_config):
     #training
     best_val_f1 = 0
+    ic(config.epochs)
+    ic(args.save_model)
     for epoch in range(config.epochs):
         total_loss = total_examples = 0
         preds = []
@@ -59,10 +61,12 @@ def train_homo(tr_loader, val_loader, te_loader, tr_inds, val_inds, te_inds, mod
 
         if epoch == 0:
             wandb.log({"best_test_f1": te_f1}, step=epoch)
-        elif val_f1 > best_val_f1:
+        elif val_f1 >= best_val_f1:
             best_val_f1 = val_f1
             wandb.log({"best_test_f1": te_f1}, step=epoch)
+            ic(args.save_model)
             if args.save_model:
+                ic("Save Model")
                 save_model(model, optimizer, epoch, args, data_config)
     
     return model
@@ -118,7 +122,7 @@ def train_hetero(tr_loader, val_loader, te_loader, tr_inds, val_inds, te_inds, m
 
         if epoch == 0:
             wandb.log({"best_test_f1": te_f1}, step=epoch)
-        elif val_f1 > best_val_f1:
+        elif val_f1 >= best_val_f1:
             best_val_f1 = val_f1
             wandb.log({"best_test_f1": te_f1}, step=epoch)
             if args.save_model:

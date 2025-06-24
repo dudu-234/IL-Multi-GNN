@@ -8,7 +8,8 @@ import logging
 import os
 import sys
 import time
-
+from icecream import ic
+from util import save_pred
 script_start = time.time()
 
 def infer_gnn(tr_data, val_data, te_data, tr_inds, val_inds, te_inds, args, data_config):
@@ -58,11 +59,21 @@ def infer_gnn(tr_data, val_data, te_data, tr_inds, val_inds, te_inds, args, data
     if args.reverse_mp:
         model = to_hetero(model, te_data.metadata(), aggr='mean')
     
-    if not (args.avg_tps or args.finetune):
+    ic(args.unique_name)
+    # if not (args.finetune):
+    #     command = " ".join(sys.argv)
+    #     name = ""
+    #     name = '-'.join(name.split('-')[3:])
+    #     args.unique_name = name
+
+    if args.finetune:
         command = " ".join(sys.argv)
         name = ""
         name = '-'.join(name.split('-')[3:])
         args.unique_name = name
+    ic(args.unique_name)
+    
+
 
     logging.info("=> loading model checkpoint")
     checkpoint = torch.load(f'{data_config["paths"]["model_to_load"]}/checkpoint_{args.unique_name}.tar')
@@ -72,9 +83,16 @@ def infer_gnn(tr_data, val_data, te_data, tr_inds, val_inds, te_inds, args, data
 
     logging.info("=> loaded checkpoint (epoch {})".format(start_epoch))
 
+    # if not args.reverse_mp:
+    #     te_f1, te_prec, te_rec = evaluate_homo(te_loader, te_inds, model, te_data, device, args, precrec=True)
+    # else:
+    #     te_f1, te_prec, te_rec = evaluate_hetero(te_loader, te_inds, model, te_data, device, args, precrec=True)
     if not args.reverse_mp:
-        te_f1, te_prec, te_rec = evaluate_homo(te_loader, te_inds, model, te_data, device, args, precrec=True)
+        te_f1, te_pred, te_gt = evaluate_homo(te_loader, te_inds, model, te_data, device, args)
     else:
-        te_f1, te_prec, te_rec = evaluate_hetero(te_loader, te_inds, model, te_data, device, args, precrec=True)
+        te_f1, te_pred, te_gt = evaluate_hetero(te_loader, te_inds, model, te_data, device, args)
 
+    save_path = f'{data_config["paths"]["prediction_to_save"]}/predictions_{args.unique_name}.npy'
+    save_pred(te_f1, te_pred, te_gt, save_path)
+    
     wandb.finish()

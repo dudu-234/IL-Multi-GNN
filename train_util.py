@@ -5,6 +5,7 @@ from typing import Union
 from torch_geometric.data import Data, HeteroData
 from torch_geometric.loader import LinkNeighborLoader
 from sklearn.metrics import f1_score
+from icecream import ic
 import json
 
 class AddEgoIds(BaseTransform):
@@ -139,7 +140,7 @@ def evaluate_homo(loader, inds, model, data, device, args):
     ground_truth = torch.cat(ground_truths, dim=0).cpu().numpy()
     f1 = f1_score(ground_truth, pred)
 
-    return f1
+    return f1, pred, ground_truth
 
 @torch.no_grad()
 def evaluate_hetero(loader, inds, model, data, device, args):
@@ -187,15 +188,18 @@ def evaluate_hetero(loader, inds, model, data, device, args):
     ground_truth = torch.cat(ground_truths, dim=0).cpu().numpy()
     f1 = f1_score(ground_truth, pred)
 
-    return f1
+    return f1, pred, ground_truth
 
 def save_model(model, optimizer, epoch, args, data_config):
     # Save the model in a dictionary
+    print("Model save")
+    path = f'{data_config["paths"]["model_to_save"]}/checkpoint_{args.unique_name}{"" if not args.finetune else "_finetuned"}.tar'
+    ic(path)
     torch.save({
                 'epoch': epoch + 1,
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict()
-                }, f'{data_config["paths"]["model_to_save"]}/checkpoint_{args.unique_name}{"" if not args.finetune else "_finetuned"}.tar')
+                }, path)
     
 def load_model(model, device, args, config, data_config):
     checkpoint = torch.load(f'{data_config["paths"]["model_to_load"]}/checkpoint_{args.unique_name}.tar')
