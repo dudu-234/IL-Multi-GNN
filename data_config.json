@@ -1,8 +1,8 @@
 {
   "paths": {
-    "aml_data": "./data",
-    "model_to_load": "./save",
-    "model_to_save": "./save",
+    "aml_data": "../data",
+    "model_to_load": "../CKPT",
+    "model_to_save": "../CKPT",
     "prediction_to_save": "./save/predictions"
   }
 }

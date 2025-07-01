@@ -193,7 +193,10 @@ def evaluate_hetero(loader, inds, model, data, device, args):
 def save_model(model, optimizer, epoch, args, data_config):
     # Save the model in a dictionary
     print("Model save")
-    path = f'{data_config["paths"]["model_to_save"]}/checkpoint_{args.unique_name}{"" if not args.finetune else "_finetuned"}.tar'
+    if args.incremental_learning:
+        path = f'{data_config["paths"]["model_to_save"]}/checkpoint_{args.unique_name}_IL.tar'
+    else:
+        path = f'{data_config["paths"]["model_to_save"]}/checkpoint_{args.unique_name}{"" if not args.finetune else "_finetuned"}.tar'
     ic(path)
     torch.save({
                 'epoch': epoch + 1,

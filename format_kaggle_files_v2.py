@@ -5,7 +5,7 @@ from tqdm import tqdm
 import sys
 import os
 
-sys.path.append("F:\\UNIVERSITY\\UNIVERSITY_DOCUMENTS\\BIG_DATA\\Doan\\baseline\\multi_gnn\\Multi-GNN")
+sys.path.append("C:/VSCodeWorkspace/UIT/DS200/Project/Fraud-Detection-Multi-GNN")
 n = len(sys.argv)
 
 if n == 1:
@@ -13,7 +13,7 @@ if n == 1:
     sys.exit()
 
 inPath = sys.argv[1]
-outPath = os.path.dirname(inPath) + "/formatted_transactions.csv"
+outPath = os.path.dirname(inPath) + "/formatted_new_snapshot.csv"
 
 # Read the data
 raw = pd.read_csv(inPath, dtype=str)

@@ -168,7 +168,7 @@ def get_model(sample_batch, config, args):
     
     return model
 
-def train_gnn(tr_data, val_data, te_data, tr_inds, val_inds, te_inds, args, data_config):
+def train_gnn(tr_data, val_data, te_data, tr_inds, val_inds, te_inds, args, data_config):   
     #set device
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 

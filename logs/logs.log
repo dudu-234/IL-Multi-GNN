@@ -5452,3 +5452,39 @@
 2025-06-24 12:43:09,105 [INFO ] Running Inference
 2025-06-24 12:43:13,045 [INFO ] => loading model checkpoint
 2025-06-24 12:43:13,211 [INFO ] => loaded checkpoint (epoch 100)
+2025-07-02 05:03:26,001 [INFO ] Random seed set as 1
+2025-07-02 05:03:26,001 [INFO ] Loading data for incremental learning
+2025-07-02 05:03:32,827 [INFO ] Running incremental learning
+2025-07-02 05:06:57,435 [INFO ] Random seed set as 1
+2025-07-02 05:06:57,435 [INFO ] Loading data for incremental learning
+2025-07-02 05:07:03,672 [INFO ] Running incremental learning
+2025-07-02 05:09:01,528 [INFO ] Random seed set as 1
+2025-07-02 05:09:01,528 [INFO ] Loading data for incremental learning
+2025-07-02 05:09:06,887 [INFO ] Running incremental learning
+2025-07-02 05:11:11,000 [INFO ] Random seed set as 1
+2025-07-02 05:11:11,000 [INFO ] Loading data for incremental learning
+2025-07-02 05:11:16,598 [INFO ] Running incremental learning
+2025-07-02 05:12:36,331 [INFO ] Random seed set as 1
+2025-07-02 05:12:36,331 [INFO ] Loading data for incremental learning
+2025-07-02 05:12:42,179 [INFO ] Running incremental learning
+2025-07-02 05:17:56,967 [INFO ] Random seed set as 1
+2025-07-02 05:17:56,968 [INFO ] Loading data for incremental learning
+2025-07-02 05:18:02,618 [INFO ] Running incremental learning
+2025-07-02 05:18:47,084 [INFO ] Random seed set as 1
+2025-07-02 05:18:47,084 [INFO ] Loading data for incremental learning
+2025-07-02 05:18:52,602 [INFO ] Running incremental learning
+2025-07-02 05:19:31,646 [INFO ] Random seed set as 1
+2025-07-02 05:19:31,646 [INFO ] Loading data for incremental learning
+2025-07-02 05:19:37,290 [INFO ] Running incremental learning
+2025-07-02 05:20:20,296 [INFO ] Random seed set as 1
+2025-07-02 05:20:20,297 [INFO ] Loading data for incremental learning
+2025-07-02 05:20:25,790 [INFO ] Running incremental learning
+2025-07-02 05:20:48,588 [INFO ] Random seed set as 1
+2025-07-02 05:20:48,588 [INFO ] Loading data for incremental learning
+2025-07-02 05:20:54,369 [INFO ] Running incremental learning
+2025-07-02 05:24:06,040 [INFO ] Random seed set as 1
+2025-07-02 05:24:06,040 [INFO ] Loading data for incremental learning
+2025-07-02 05:24:09,212 [INFO ] Running incremental learning
+2025-07-02 05:25:46,953 [INFO ] Random seed set as 1
+2025-07-02 05:25:46,953 [INFO ] Loading data for incremental learning
+2025-07-02 05:25:50,464 [INFO ] Running incremental learning
