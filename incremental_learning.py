@@ -3,7 +3,7 @@ import torch
 import wandb
 import logging
 from training import get_model
-from train_util import AddEgoIds, extract_prevaram, add_aftrange_ids, get_loaders, evaluate_homo, evaluate_hetero, save_model, load_model
+from train_util import AddEgoIds, extract_param, add_arange_ids, get_loaders, evaluate_homo, evaluate_hetero, save_model, load_model
 from models import PNA
 from mmd import MMD2
 from data_loading import get_il_data
