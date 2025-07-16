@@ -160,24 +160,9 @@ def get_data(args, data_config):
     return tr_data, val_data, te_data, tr_inds, val_inds, te_inds
     
 def get_il_data(data_config):
-    """
-    Load two AML transaction CSVs (old snapshot and new data),
-    concatenate them to create a combined snapshot for IL,
-    and return GraphData objects for:
-    - old snapshot (GraphData)
-    - new combined snapshot (GraphData)
-    
-    Returns:
-        data_old: GraphData of old snapshot.
-        data_new: GraphData of new combined snapshot (old + new).
-    """
-    # Load CSVs
     df_old = pd.read_csv(f"{data_config['paths']['aml_data']}/formatted_transactions.csv")
     df_new = pd.read_csv(f"{data_config['paths']['aml_data']}/formatted_new_snapshot.csv")
-    
-    # Concat for new snapshot
-    df_concat = pd.concat([df_old, df_new], ignore_index=True)
-    
+        
     # Process old snapshot
     edge_index_old = torch.LongTensor(df_old[['from_id', 'to_id']].to_numpy().T)
     edge_attr_old = torch.tensor(df_old[['Timestamp', 'Amount Received', 'Received Currency', 'Payment Format']].to_numpy(), dtype=torch.float)
@@ -196,12 +181,12 @@ def get_il_data(data_config):
     )
     
     # Process new snapshot (concat)
-    edge_index_new = torch.LongTensor(df_concat[['from_id', 'to_id']].to_numpy().T)
-    edge_attr_new = torch.tensor(df_concat[['Timestamp', 'Amount Received', 'Received Currency', 'Payment Format']].to_numpy(), dtype=torch.float)
-    y_new = torch.LongTensor(df_concat['Is Laundering'].to_numpy())
-    timestamps_new = torch.tensor(df_concat['Timestamp'].to_numpy(), dtype=torch.float)
+    edge_index_new = torch.LongTensor(df_new[['from_id', 'to_id']].to_numpy().T)
+    edge_attr_new = torch.tensor(df_new[['Timestamp', 'Amount Received', 'Received Currency', 'Payment Format']].to_numpy(), dtype=torch.float)
+    y_new = torch.LongTensor(df_new['Is Laundering'].to_numpy())
+    timestamps_new = torch.tensor(df_new['Timestamp'].to_numpy(), dtype=torch.float)
     
-    num_nodes_new = df_concat[['from_id', 'to_id']].to_numpy().max() + 1
+    num_nodes_new = df_new[['from_id', 'to_id']].to_numpy().max() + 1
     x_new = torch.ones((num_nodes_new, 1), dtype=torch.float)  # Placeholder feature
     
     data_new = GraphData(

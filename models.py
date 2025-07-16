@@ -139,7 +139,7 @@ class PNA(torch.nn.Module):
         self.mlp = nn.Sequential(Linear(n_hidden*3, 50), nn.ReLU(), nn.Dropout(self.final_dropout),Linear(50, 25), nn.ReLU(), nn.Dropout(self.final_dropout),
                               Linear(25, n_classes))
 
-    def forward(self, x, edge_index, edge_attr):
+    def forward(self, x, edge_index, edge_attr, return_node_embeddings=False):
         src, dst = edge_index
 
         x = self.node_emb(x)
@@ -150,14 +150,27 @@ class PNA(torch.nn.Module):
             if self.edge_updates: 
                 edge_attr = edge_attr + self.emlps[i](torch.cat([x[src], x[dst], edge_attr], dim=-1)) / 2
 
-        logging.debug(f"x.shape = {x.shape}, x[edge_index.T].shape = {x[edge_index.T].shape}")
-        x = x[edge_index.T].reshape(-1, 2 * self.n_hidden).relu()
-        logging.debug(f"x.shape = {x.shape}")
-        x = torch.cat((x, edge_attr.view(-1, edge_attr.shape[1])), 1)
-        logging.debug(f"x.shape = {x.shape}")
-        out = x
-        return self.mlp(out)
+        # logging.debug(f"x.shape = {x.shape}, x[edge_index.T].shape = {x[edge_index.T].shape}")
+        # x = x[edge_index.T].reshape(-1, 2 * self.n_hidden).relu()
+        # logging.debug(f"x.shape = {x.shape}")
+        # x = torch.cat((x, edge_attr.view(-1, edge_attr.shape[1])), 1)
+        # logging.debug(f"x.shape = {x.shape}")
+        # out = x
+        # return self.mlp(out)
     
+        h_node = x                            # (N, d)
+
+        logging.debug(f"x.shape = {x.shape}, "
+                    f"x[edge_index.T].shape = {x[edge_index.T].shape}")
+        pair = h_node[edge_index.T].reshape(-1, 2 * self.n_hidden).relu()
+        logging.debug(f"pair.shape = {pair.shape}")
+        edge_feat = torch.cat([pair, edge_attr], dim=1)          # (E, 3d)
+        logging.debug(f"edge_feat.shape = {edge_feat.shape}")
+        logits = self.mlp(edge_feat)                             # (E, n_classes)
+        if return_node_embeddings:
+            return h_node, logits
+        return logits
+
 class RGCN(nn.Module):
     def __init__(self, num_features, edge_dim, num_relations, num_gnn_layers, n_classes=2, 
                 n_hidden=100, edge_update=False,

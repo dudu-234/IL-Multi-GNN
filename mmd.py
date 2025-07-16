@@ -65,8 +65,5 @@ def MMD2(x, y, kernel="rbf", device="cpu"):
             YY += torch.exp(-0.5 * dyy / a)
             XY += torch.exp(-0.5 * dxy / a)
 
-    else:
-        raise ValueError("Unsupported kernel type. Use 'rbf' or 'multiscale'.")
-
     mmd = torch.mean(XX + YY - 2. * XY)
     return mmd
