@@ -91,17 +91,17 @@ def train_il_gnn(data_old, data_new, args, data_config):
             "batch_size": args.batch_size,
             "model": args.model,
             "data": args.data,
-            "lr": extract_prevaram("lr", args),
+            "lr": extract_param("lr", args),
             "alpha_mmd": 0.05,
             "beta_mmd": 0.05,
-            "n_hidden": extract_prevaram("n_hidden", args),
-            "n_gnn_layers": extract_prevaram("n_gnn_layers", args),
+            "n_hidden": extract_param("n_hidden", args),
+            "n_gnn_layers": extract_param("n_gnn_layers", args),
             "loss": "ce",
-            "w_ce1": extract_prevaram("w_ce1", args),
-            "w_ce2": extract_prevaram("w_ce2", args),
-            "dropout": extract_prevaram("dropout", args),
-            "final_dropout": extract_prevaram("final_dropout", args),
-            "n_heads": extract_prevaram("n_heads", args) if args.model == 'gat' else None
+            "w_ce1": extract_param("w_ce1", args),
+            "w_ce2": extract_param("w_ce2", args),
+            "dropout": extract_param("dropout", args),
+            "final_dropout": extract_param("final_dropout", args),
+            "n_heads": extract_param("n_heads", args) if args.model == 'gat' else None
         }
     )
     config = wandb.config
@@ -109,7 +109,7 @@ def train_il_gnn(data_old, data_new, args, data_config):
     transform = AddEgoIds() if args.ego else None
 
     # Add unique IDs
-    add_aftrange_ids([data_new])
+    add_arange_ids([data_new])
 
     tr_loader = get_loaders(data_new, data_new, data_new, None, None, None, transform, args)[0]
 
